@@ -1,0 +1,32 @@
+<table style="width: 100%;">
+    <tr>
+        <td>{{nombreCurso}}</td>
+        <td>{{precioProducto}}</td>
+    </tr>
+    <tr>
+        <td><input type="text" value="{{nombreCurso}}"></td>
+        <td><input type="text" [attr.maxlength]="maxLength" [attr.minLength]="minChar"></td>
+    </tr>
+    <tr>
+        <td><input [type]="inputType"></td>
+        <td><p [class]="miColor">Es mi parrafo de ejemplo</p></td>
+    </tr>
+    <tr>
+        <td><button (click)="showMensajeBienvenida()">Ver Mensaje</button></td>
+        <td><button (click)="setNombreCurso()">Cambiar nombre del curso</button></td>
+    </tr>
+    <tr>
+        <td>
+            <select name="" id="" (change)="setCiudad()">
+                <option value="">Santiago</option>
+                <option value="">Valparaiso</option>
+                <option value="">Concepcion</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="" id="" [(ngModel)]="nombreCurso">
+        </td>
+    </tr>
+</table>

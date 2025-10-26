@@ -1,0 +1,80 @@
+<table>
+    <tr>
+        <td>
+            @if (mostrarOcultarParrafo === true) {
+                <h1>Mostrar</h1>
+                <p>Este es mi parrafo</p>
+            }@else {
+                <small>Sección oculta</small>
+                <h3>El parrafo esta oculto</h3>
+            }
+        </td>
+        <td>
+            <button class="btn btn-primary" (click)="mostrar()">Mostrar</button>
+        </td>
+        <td>
+            <button class="btn btn-secondary" (click)="ocultar()">Ocultar</button>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            @if (nombreMes == 'ene') {
+                <span>Enero</span>
+            }@else if (nombreMes == 'feb') {
+                <h2>Febrero</h2>
+            }@else if (nombreMes == 'mar') {
+                <h3>Marzo</h3>
+            }@else {
+                <span>Entrada incorrecta</span>
+            }
+        </td>
+        <td>
+            <input type="text" name="" id="" [(ngModel)]="nombreMes">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for (item of listaCiudades; track $index) {
+                    <li>{{item}}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of listaCiudades; track $index) {
+                    <option value="">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+<table>
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of listaEstudiantes; track $index) {
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.ciudad}}</td>
+                <td>
+                    @if(item.activo == true){
+                        <h6>Activo</h6>
+                    }@else if(item.activo == false){
+                        <h6>Desactivado</h6>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
